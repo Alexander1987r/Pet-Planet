@@ -1,0 +1,31 @@
+.header {
+    position: absolute;
+    top: 22px;
+    left: 0;
+    right: 0; 
+    z-index: 1;
+    &__logo{
+      width: 200px;
+      height: 35px;
+      @media(min-width: 1024px){
+        width: 331px;
+        height: 57px;
+      }
+    }
+    @media(min-width: 768px){
+      top: 32px;
+    }
+    @media(min-width: 1024px){
+      top: 40px;
+    }
+    @media(min-width: 1440px){
+      top: 50px;
+    }
+    
+}
+.container {
+}
+.header__navigation {
+}
+.header__logo {
+}

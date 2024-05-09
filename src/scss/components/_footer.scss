@@ -1,0 +1,101 @@
+
+@use '../variables' as *;
+.footer {
+  background-color: $green;
+  color: $light;
+  padding: 30px 0  24px 0;
+  background-image: url(/image/footer/paw.svg);
+  background-repeat: no-repeat;
+  background-size: 114px 106px;
+  background-position: bottom right;
+  @media(min-width:768px){
+    padding: 40px 0 32px 0;
+    background-image: url(/image/footer/paw-tablet.svg);
+    background-size: 215px 158px;
+    background-position: bottom right 46px;
+  }
+  @media(min-width:1024px){
+    padding: 50px 0 32px 0;
+    background-size: 311px 220px;
+    background-position: bottom right 293px;
+  }
+  @media(min-width:1440px){
+    padding: 80px 0 32px 0;
+    background-size: 375px 280px;
+    background-position: bottom right 475px;
+  }
+  &__container{
+    display: flex;
+    flex-direction: column;
+    @media(min-width:768px){
+      flex-direction: row;
+      justify-content: space-between;  
+      flex-wrap: wrap;  
+    }
+  }
+  &__logo {
+    width: 200px;
+    height: 35px;
+    margin-bottom: 32px;
+    order: 1;
+    @media(min-width:768px){
+    margin-bottom: 0;
+    }
+    @media(min-width:1024px){
+        width: 331px;
+        height: 57px;
+    }
+  }
+  &__contacts { 
+    order: 2;
+    margin-bottom: 67px;
+    @media(min-width:768px){
+        margin-bottom: 41px;
+    }
+    @media(min-width:1024px){
+        margin-bottom: 31px;
+    }
+    @media(min-width:1440px){
+        margin-bottom:25px;
+    }
+    .contacts__mail{
+        display: block;
+        font-style: normal;
+        margin-bottom: 16px;
+        @media(min-width:768px){
+            font-size: 20px;
+        }
+        @media(min-width:1440px){
+            font-size: 24px;
+        }   
+    }
+    .contacts__list{
+        display: flex;  
+        flex-wrap: wrap;
+        gap: 12px;   
+    }
+  }
+  &__info {
+  order: 3;
+  font-size: 12px;
+   @media(min-width:768px){
+    width: 100%;
+    font-size: 16px;
+   }
+  }
+  &__copyright{
+    margin-bottom: 12px; 
+    @media(min-width:768px){
+        margin-bottom: 17px;
+    }
+  }
+  &__text{
+    margin-bottom: 3px; 
+  }
+  &__item:not(:last-child){
+    margin-bottom: 3px; 
+  }
+}
+
+
+

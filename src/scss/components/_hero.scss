@@ -1,0 +1,51 @@
+@use '../variables' as *;
+.hero {
+    padding:101px 0 283px;
+    background-color: $purple;
+    background-image: url(/image/hero/dog.png), url(/image/hero/pattern-2.svg),url(/image/hero/pattern-1.svg);
+    background-size: 56% auto, 86% auto, cover;
+    background-position: bottom right,bottom right,center;
+    background-repeat: no-repeat;
+    &__image{
+        width: 292px;
+        height: 78px;
+        margin-bottom: 16px;
+        @media(min-width:768px){
+          width: 588px;
+          height: 157px; 
+          margin-bottom: 32px;
+        }
+        @media(min-width:1440px){
+            width: 810px;
+            height: 214px; 
+            margin-bottom: 50px;
+        }
+    }
+    &__text{
+        color: $light;
+        @media(min-width:768px){
+            font-size: 20px;
+        }
+        @media(min-width:1440px){
+            font-size: 24px;
+        }
+    }
+    @media(min-width:380px){
+        background-image: url(/image/hero/dog-tablet.png), url(/image/hero/pattern-2.svg),url(/image/hero/pattern-1.svg);
+        background-size: 216px auto, 80% auto, cover;
+    }
+    @media(min-width:768px){
+        padding:108px 0 461px; 
+        background-image: url(/image/hero/dog-tablet.png), url(/image/hero/pattern-2.svg),url(/image/hero/pattern-1.svg);
+        background-size: auto,  655px auto, cover;
+    }
+    @media(min-width:1024px){
+        padding:148px 0 172px; 
+        background-size: auto,  607px auto, cover;
+    }
+    @media(min-width:1440px){
+        padding:218px 0 245px; 
+        background-image: url(/image/hero/dog-big.png), url(/image/hero/pattern-2.svg),url(/image/hero/pattern-1.svg);
+        background-size: auto,  854px auto, cover;
+    }
+}

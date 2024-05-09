@@ -1,0 +1,195 @@
+@use '../variables' as *;
+.advantages {
+   position: relative;
+   &::before{
+    position: absolute;
+    content: '';
+    width: 100px;
+    height: 169px;
+    top: -82px;
+    right: 0;
+    background-image: url(/image/advantages/dog.png);
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    z-index: -1;
+    @media(min-width:768px){
+      width: 202px;
+      height: 348px;
+      top: -176px;
+    }
+    @media(min-width:1024px){
+      width: 272px;
+      height: 469px;
+      top: -242px;
+    }
+    @media(min-width:1440px){
+      width: 396px;
+      height: 682px;
+      top: -338px;
+    }
+   }
+   &__bg{
+    padding: 50px 0;
+    background-color: $carrot;
+    background-image:  url(/image/hero/pattern-1.svg);
+    background-position: center;
+    color: $light;
+    border-radius: 80px 80px 0 0;
+    @media(min-width:768px){
+        padding: 80px 0;
+        border-radius: 120px 120px 0 0;
+    }
+    @media(min-width:1024px){
+        border-radius: 200px 200px 0 0;
+    }
+    @media(min-width:1440px){
+        border-radius: 300px 300px 0 0;
+        padding: 100px 0;
+    }
+   }
+   &__title{
+    font-size: 30px;
+    text-align: center;
+    line-height: 1.3;
+    max-width: 302px;
+    margin: 0 auto 24px auto;
+    @media(min-width:768px){
+        font-size: 44px;
+        margin-bottom: 32px;
+        max-width: inherit;
+    }
+    @media(min-width:1440px){
+        font-size: 52px;
+        margin-bottom: 50px;
+    }
+   }
+   &__count-box {
+     position: absolute;
+     width: 140px;
+     height: 140px;
+     top: -73px;
+     left: 0;
+     background-image: url(/image/advantages/star.svg);
+     background-repeat: no-repeat;
+     background-size: 100% auto;
+     display: flex;
+     flex-direction: column;
+     align-items: center; 
+     justify-content: center;
+     @media(min-width:768px){
+      width:201px;
+      height:201px;
+      top: -102px;
+     }
+     @media(min-width:1024px){
+      width:257px;
+      height:257px;
+      top: -102px;
+     }
+     @media(min-width:1440px){
+      width:306px;
+      height:307px;
+      top: -115px;
+     }
+   }
+   &__count {
+    font-weight: 700;
+    font-size: 20px;
+    @media(min-width:768px){
+      font-size: 32px;
+    }
+    @media(min-width:1024px){
+      font-size: 44px;
+    }
+    @media(min-width:1440px){
+      font-size: 52px;
+    }
+   }
+   &__count-text {
+    max-width: 82px;
+    text-align: center;
+    line-height: 1.2;
+    @media(min-width:768px){
+      max-width: 102px;
+      font-size: 20px;
+     }
+    @media(min-width:1440px){
+      font-size: 24px;
+    }
+   }
+}
+.list{
+  @media(min-width:1024px){
+    display: flex;
+    gap: 20px;
+  }
+  @media(min-width:1440px){
+    gap: 24px;
+  }
+  &__item{
+    padding-top: 86px;
+    background-repeat: no-repeat;
+    background-size: 80px 80px;
+    background-position: center top;
+    @media(min-width:768px){
+      padding-top: 172px;
+      background-size: 160px 160px;
+    }
+    @media(min-width:1024px){
+    min-width: 293px;     
+    }
+    @media(min-width:1440px){
+        padding-top: 268px;
+        background-size: 256px 256px;
+        min-width: 417px;
+    }
+  }
+  &__item:not(:last-child){
+    margin-bottom: 32px;
+    @media(min-width:768px){
+        margin-bottom: 50px;
+    }
+    @media(min-width:1024px){
+        margin-bottom: 0;
+    }
+  }
+  &__item_first{
+    background-image: url(/image/advantages/soft-first.png);
+  }
+  &__item_second{
+    background-image: url(/image/advantages/soft-second.png);
+  }
+  &__item_third{
+    background-image: url(/image/advantages/soft-third.png);
+  }
+  &__title{
+        text-align: center;
+        font-size: 20px;
+        margin-bottom: 4px;
+        @media(min-width:768px){
+         font-size: 24px;
+         margin-bottom: 12px;
+        }
+        @media(min-width:1440px){
+         font-size: 28px;
+        }
+  }
+  &__title br{
+    display: none;     
+    @media(min-width:1024px){
+     display: block;
+    }
+  }  
+  &__text{
+    font-size: 16px;
+    text-align: center;
+    @media(min-width:768px){
+        font-size: 20px;
+    }
+    @media(min-width:1440px){
+        font-size: 24px;
+    }
+  }
+}
+
+

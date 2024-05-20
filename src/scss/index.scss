@@ -4,7 +4,9 @@
 @use 'components/about' as *;
 @use 'components/advantages' as *;
 @use 'components/subscription' as *;
+@use 'components/store' as *;
 @use 'components/footer' as *;
-
+@use 'components/modal' as *;
+@use 'components/loader' as *;
 @import 'normalize.css';
 

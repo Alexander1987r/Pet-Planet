@@ -23,6 +23,7 @@
     }
     &__text{
         color: $light;
+        margin-bottom: 20px;
         @media(min-width:768px){
             font-size: 20px;
         }
@@ -30,22 +31,74 @@
             font-size: 24px;
         }
     }
+    &__link{
+        background-color: $green;
+        color: $light;
+        border-radius: 40px;
+        font-weight: 700;
+        padding: 11px 44px 11px 24px;
+        background-image: url(/image/arrow-up.svg);
+        background-repeat: no-repeat;
+        background-position: right 15px center;
+        outline: none;
+        &:hover{
+            background-color: #00772f;
+        }
+    }
+    &_store{
+        outline: 5px solid white;
+        background-color: $green;
+        background-image:url(/image/store/store-bg.png),url(/image/hero/pattern-1.svg);
+        background-position:bottom  right, center;
+        background-repeat: no-repeat;
+        background-size:100% auto,100% auto ;
+    }
     @media(min-width:380px){
         background-image: url(/image/hero/dog-tablet.png), url(/image/hero/pattern-2.svg),url(/image/hero/pattern-1.svg);
         background-size: 216px auto, 80% auto, cover;
+        &_store{
+            background-image:url(/image/store/store-bg.png),url(/image/hero/pattern-1.svg);
+            background-size:85% auto,100% auto ;
+        }
     }
     @media(min-width:768px){
         padding:108px 0 461px; 
         background-image: url(/image/hero/dog-tablet.png), url(/image/hero/pattern-2.svg),url(/image/hero/pattern-1.svg);
         background-size: auto,  655px auto, cover;
+        &_store{
+            background-image:url(/image/store/store-bg.png),url(/image/hero/pattern-1.svg);
+            background-size:85% auto,100% auto;
+        }
+        &__text{
+            margin-bottom: 40px;
+        }
+        &__link{
+            font-size:20px;
+            padding: 16px 56px 16px 36px;
+        }
     }
     @media(min-width:1024px){
         padding:148px 0 172px; 
         background-size: auto,  607px auto, cover;
+        &_store{
+            background-image:url(/image/store/store-bg.png),url(/image/hero/pattern-1.svg);
+            background-size:50% auto,100% auto;
+        }
     }
     @media(min-width:1440px){
         padding:218px 0 245px; 
         background-image: url(/image/hero/dog-big.png), url(/image/hero/pattern-2.svg),url(/image/hero/pattern-1.svg);
         background-size: auto,  854px auto, cover;
+        &_store{
+            background-image:url(/image/store/store-bg.png),url(/image/hero/pattern-1.svg);
+            background-size:839px ,100% auto;
+        }
+        &__text{
+            margin-bottom: 60px;
+        }
+        &__link{
+            font-size:24px;
+            padding: 16px 44px 16px 24px;
+        }
     }
 }

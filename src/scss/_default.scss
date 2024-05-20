@@ -53,6 +53,10 @@ a{
 h1,h2,h3,p,figure,fieldset{
   margin: 0;
 }
+fieldset{
+  padding: 0;
+  border: none;
+}
 .visualy-hidden{
   position: absolute;
   width: 1px;

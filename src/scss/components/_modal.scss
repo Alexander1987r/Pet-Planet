@@ -1,0 +1,167 @@
+@use '../variables' as *;
+.modal-overlay {
+   position: fixed;
+   inset: 0;
+   background-color: rgba(black,0.7);
+   display: none;
+   z-index: 2;
+   overflow: hidden;
+   &_button {
+    position: absolute;
+    color: black;
+    top: 12px;
+    right: 12px;
+    font-size: 36px;
+    outline: 1px solid red;
+  }
+}
+.modal {
+    background-color: white;
+    padding:24px 24px 24px 348px;
+    border-radius: 24px;
+    box-shadow: 0 0 32px 0 rgba(0, 0, 0, 0.15);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.4;
+    margin: auto;
+    position: relative;
+     overflow: hidden;
+     max-width: 667px;
+    &::before{
+      position: absolute;
+      content: '';
+      top: 0;
+      bottom: 0;
+      left: 0;
+      width: 324px;
+      background-image: url(/image/modal/basket-dog.jpg);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size:100% auto ;
+    }
+    &__content {
+    
+    }
+    &__title {
+      font-size: 24px;
+      font-weight: 400;
+      margin-bottom: 16px;
+    }
+    &__list {
+      margin-bottom: 74px;
+      max-height: 150px;
+      overflow-y: auto;
+    }
+    
+    &__item {
+      display: grid;
+      grid-template-columns: 54px 1fr 1fr;
+      grid-template-rows:1fr 24px;
+      grid-column-gap:12px ;
+      position: relative;
+      &:not(:last-child){
+        margin-bottom: 25px; 
+      }
+      &:not(:last-child)::before{
+         position: absolute;
+         content: ' ';
+         width: 100%;
+         height: 1px;
+         bottom: -13px;
+         background-color: #2e3514;
+         opacity: 0.04;
+      }
+    }
+    &__item-title {
+      font-weight: 400;
+      font-size: 16px;
+      order: 0;
+      grid-column: 2/-1;
+      grid-row: 1/2;
+    }
+    &__item-image {
+      order: -1;
+      grid-column: 1/2;
+      grid-row: 1/-1;
+    }
+    &__item-buttons {
+      grid-column: 2/3;
+      grid-row: 2/3;
+      display: flex;
+      order: 1;
+      align-self:flex-end;
+    }
+    &__item-button {
+    border: 1px solid $green;
+    border-radius: 6px;
+    color: $green;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    }
+    &__item-button:not(:last-child) {
+      margin-right: 8px;
+    }
+    &__item-count {
+      margin-right: 8px;
+    }
+    &__item-price {
+      grid-column: 3/4;
+      order: 2;
+      align-self: flex-end;
+      justify-self: flex-end;
+      grid-row: 2/3;
+    }
+}
+.form {
+  display: grid;
+  grid-template-columns: 121px 1fr;
+  &__field {
+    grid-column: 1/-1;
+    margin-bottom: 16px;
+    max-height: 95px;
+    overflow-y:auto ;
+  }
+  &__title {
+    margin-bottom: 4px;
+    font-weight: 700;
+  }
+  &_label {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+  }
+  &__label-text {
+  }
+  &__label-control {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: 1px solid $green;
+  }
+  &__input {
+    display: none;
+  }
+  &__input:checked+span{
+    background-color: $green;
+  }
+  &_submit {
+    grid-column: 1/2;
+    background-color: $purple;
+    color:white;
+    border-radius: 40px;
+    font-weight: 700;
+    padding: 12px 0;
+  }
+  &__price {
+    grid-column: 2/-1;
+    color:$purple;
+    font-weight: 700;
+    justify-self: flex-end;
+    align-self: center;
+  }
+}
+

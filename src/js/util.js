@@ -1,3 +1,4 @@
+ 
 
 import { getFetching } from "./data.js";
 
@@ -13,8 +14,29 @@ const storeButtonCount=storButton.querySelector('.store__button-count');
 const  modalOverlay=document.querySelector('.modal-overlay');
 const  modalOverlayButton=modalOverlay.querySelector('.modal-overlay_button');
 const  modalList=modalOverlay.querySelector('.modal__list');
-const modalCartForm=modalOverlay.querySelector('.form');
+
 const  cartTotalPriceElement=modalOverlay.querySelector('.form__price');
+
+
+const modalCartForm=document.querySelector('.form');
+//cообщение заказа
+const orderMessageElement=document.createElement('div');
+orderMessageElement.classList.add('order-message');
+
+const orderMessageText=document.createElement('p');
+orderMessageText.classList.add('order-message__text');
+
+const orderMessageCloseButton=document.createElement('button');
+orderMessageCloseButton.classList.add('order-message__close-button');
+orderMessageCloseButton.textContent="Закрыть";
+
+orderMessageElement.append(orderMessageText,orderMessageCloseButton);
+
+orderMessageCloseButton.addEventListener('click',()=>{
+    orderMessageElement.remove();
+});
+
+
 //активный класс линка
 export const getActiveCategory=()=>{
 //функция активного тогла
@@ -185,5 +207,49 @@ export const showModal=()=>{
            }
     });
 
-    
+    const submitOrder=async(evt)=>{
+        evt.preventDefault(); 
+        //значенеи 
+        const storeId=modalCartForm.store.value;
+        const products=JSON.parse(localStorage.getItem("products") || "[]");
+        console.log(products);  
+        //переберем массив
+        const prodOrder=products.map(({id,count})=>{
+          return {id:id,
+                  quantity:count
+              }
+        });
+        //отправка на сервер
+        try{
+         const responce=await fetch(`${API_URL}/api/orders`,{
+          method:"POST",
+          headers:{
+              "Content-Type":"application/json",
+          },
+          body:JSON.stringify({storeId,products})
+         });
+         if(!responce.ok){
+          throw new Error(responce.status);
+         }
+      
+      
+         localStorage.removeItem("products");
+         localStorage.removeItem("cartProductsAdd");
+      
+         const {orderId}=await responce.json();
+         orderMessageText.textContent=`Ваш заказ оформлен,номер ${orderId}.Вы можете его забрать`;
+         document.body.append(orderMessageElement);
+         modalOverlay.style.display='none';
+         updateCartCount();
+        }catch(error){
+          console.error(`Ошибка оформления заказа:${error}`);
+        }
+        console.log('prodOrder',prodOrder); 
+    }
+      
+    //событие на форму 
+    modalCartForm.addEventListener('submit',submitOrder);
 }
+
+
+ 

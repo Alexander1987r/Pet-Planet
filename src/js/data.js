@@ -34,7 +34,6 @@ export const getFetching=async(category)=>{
        throw new Error(responce.status);
      }
      const productsArray=await responce.json();
-      
      renderCarts(productsArray);
    } catch(error){
      console.error(`Ошибка:${error}`);
@@ -42,4 +41,3 @@ export const getFetching=async(category)=>{
         removeLoader();
     }
 }
-

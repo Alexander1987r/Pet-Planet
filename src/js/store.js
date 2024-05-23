@@ -4,7 +4,10 @@ import { getActiveCategory,showModal} from "./util.js";
 const storeCategoriesButton=document.querySelectorAll('.store__categories-button');
 
 
+
 showModal();
+
+
 getActiveCategory();
 
 

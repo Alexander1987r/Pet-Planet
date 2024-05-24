@@ -12,7 +12,19 @@
     top: 12px;
     right: 12px;
     font-size: 36px;
-    outline: 1px solid red;
+    border-radius: 5px;
+    width: 30px;
+    height: 30px;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    background-image: url(/image/modal/close.svg);
+    box-shadow: 0px 3px 2px rgba(0, 0, 0, 0.4);
+    transition: all 0.3s ease-in-out;
+    &:hover{
+      width: 35px;
+      height: 35px;
+      top: 11px;
+      right: 11px;
+     }
   }
 }
 .modal {
